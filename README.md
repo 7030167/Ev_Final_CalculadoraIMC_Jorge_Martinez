@@ -24,81 +24,81 @@ Esta aplicación web permite a los usuarios calcular su Índice de Masa Corporal
 
 ### 1. Vista (JSP: imc.jsp)
 
-Muestra un formulario para que el usuario ingrese su masa corporal en kg.
+-Muestra un formulario para que el usuario ingrese su masa corporal en kg.
 
-Envía la solicitud al IMCServlet mediante el método POST.
+-Envía la solicitud al IMCServlet mediante el método POST.
 
-Muestra el historial de cálculos recuperado del servicio REST.
+-Muestra el historial de cálculos recuperado del servicio REST.
 
 ### 2. Controlador (Servlet: IMCServlet)
 
-Entrada del Usuario: Recupera el nombre del usuario desde la sesión y la masa corporal desde el formulario.
+-Entrada del Usuario: Recupera el nombre del usuario desde la sesión y la masa corporal desde el formulario.
 
-Validación de Entrada: Redirige al inicio de sesión si faltan datos.
+-Validación de Entrada: Redirige al inicio de sesión si faltan datos.
 
-Llamada al Servicio REST:
+-Llamada al Servicio REST:
 
-Utiliza jakarta.ws.rs.client.Client para llamar al servicio REST en la ruta /api/imc/calcular.
+-Utiliza jakarta.ws.rs.client.Client para llamar al servicio REST en la ruta /api/imc/calcular.
 
-Envía los parámetros usuario y masa como datos FORM_URLENCODED.
+-Envía los parámetros usuario y masa como datos FORM_URLENCODED.
 
-Si la respuesta es exitosa (código 200), convierte la respuesta JSON a un objeto IMC.
+-Si la respuesta es exitosa (código 200), convierte la respuesta JSON a un objeto IMC.
 
-Mostrar Resultado:
+-Mostrar Resultado:
 
-Si el cálculo es exitoso, reenvía la solicitud a calcularIMC.jsp con el objeto IMC.
+-Si el cálculo es exitoso, reenvía la solicitud a calcularIMC.jsp con el objeto IMC.
 
-Si falla, muestra un mensaje de error en la vista.
+-Si falla, muestra un mensaje de error en la vista.
 
 ### 3. Servicio REST (Clase: IMCService)
 
-Expone un endpoint POST /api/imc/calcular para calcular el IMC.
+-Expone un endpoint POST /api/imc/calcular para calcular el IMC.
 
-Validación de Masa:
+-Validación de Masa:
 
-Si la masa es menor o igual a cero, responde con un error 400.
+-Si la masa es menor o igual a cero, responde con un error 400.
 
-Cálculo del IMC:
+-Cálculo del IMC:
 
-Crea un nuevo objeto IMC pasando el nombre del usuario y la masa corporal.
+-Crea un nuevo objeto IMC pasando el nombre del usuario y la masa corporal.
 
-Obtiene la estatura del usuario desde la base de datos usando UsuarioDAO.obtenerEstatura(nombreUsuario).
+-Obtiene la estatura del usuario desde la base de datos usando UsuarioDAO.obtenerEstatura(nombreUsuario).
 
 ### 4. Modelo (Clases: IMC y UsuarioDAO)
 
-Cálculo del IMC:
+-Cálculo del IMC:
 
-La clase IMC almacena el nombre del usuario, la masa corporal y el resultado del IMC.
+-La clase IMC almacena el nombre del usuario, la masa corporal y el resultado del IMC.
 
-Calcula el IMC usando la fórmula:
+### -Calcula el IMC usando la fórmula; 
 
+IMC=Peso (kg) / Estatura (m)²
 
+### Acceso a la Base de Datos (UsuarioDAO)
 
-Acceso a la Base de Datos (UsuarioDAO)
+-Proporciona métodos para:
 
-Proporciona métodos para:
+-Registrar un usuario (registrarUsuario).
 
-Registrar un usuario (registrarUsuario).
+-Autenticar usuarios (autenticar).
 
-Autenticar usuarios (autenticar).
+-Obtener la estatura del usuario (obtenerEstatura).
 
-Obtener la estatura del usuario (obtenerEstatura).
-
-Utiliza JDBC para conectarse a MySQL con la URL jdbc:mysql://localhost:3306/calculadora_imc.
+-Utiliza JDBC para conectarse a MySQL con la URL jdbc:mysql://localhost:3306/calculadora_imc.
 
 ## Instalación y Configuración
 
-Clonar el repositorio:
+-Clonar el repositorio:
 
-git clone https://github.com/usuario/calculadora-imc.git
+-git clone https://github.com/usuario/calculadora-imc.git
 
-Configurar la base de datos MySQL:
+### -Configurar la base de datos MySQL:
 
-Crear la base de datos calculadora_imc.
+-Crear la base de datos calculadora_imc.
 
-Ejecutar el script SQL en database/schema.sql para crear las tablas necesarias.
+-Ejecutar el script SQL en database/schema.sql para crear las tablas necesarias.
 
-Configurar GlassFish Server y desplegar la aplicación.
+-Configurar GlassFish Server y desplegar la aplicación.
 
-Ejecutar la aplicación en el navegador accediendo a http://localhost:8080/calculadora-imc/.
+-Ejecutar la aplicación en el navegador accediendo a http://localhost:8080/calculadora-imc/.
 
