@@ -6,19 +6,19 @@ Esta aplicación web permite a los usuarios calcular su Índice de Masa Corporal
 
 ## Tecnologías Utilizadas
 
-Java EE (Servlets y JSP)
+-Java EE (Servlets y JSP)
 
-Jakarta RESTful Web Services (JAX-RS)
+-Jakarta RESTful Web Services (JAX-RS)
 
-MySQL
+-MySQL
 
-JDBC
+-JDBC
 
-GlassFish Server
+-GlassFish Server
 
-Bootstrap (CDN) para la interfaz de usuario
+-Bootstrap (CDN) para la interfaz de usuario
 
-Git y GitHub para el control de versiones
+-Git y GitHub para el control de versiones
 
 ## Flujo principal de la Aplicación
 
