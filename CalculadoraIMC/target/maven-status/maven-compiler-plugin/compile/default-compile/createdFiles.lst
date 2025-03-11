@@ -1,0 +1,11 @@
+com\mycompany\calculadoraimc\Controlador\IMCService.class
+com\mycompany\calculadoraimc\Modelo\IMC.class
+com\mycompany\calculadoraimc\Controlador\IMCServlet.class
+com\mycompany\calculadoraimc\Modelo\UsuarioDAO.class
+com\mycompany\calculadoraimc\JakartaRestConfiguration.class
+com\mycompany\calculadoraimc\Modelo\Usuario.class
+com\mycompany\calculadoraimc\Controlador\RegistroServlet.class
+com\mycompany\calculadoraimc\resources\JakartaEE10Resource.class
+com\mycompany\calculadoraimc\resources\JakartaRestConfiguration.class
+com\mycompany\calculadoraimc\ConexionBD.class
+com\mycompany\calculadoraimc\Controlador\LoginServlet.class
