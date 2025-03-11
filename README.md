@@ -20,7 +20,7 @@ Bootstrap (CDN) para la interfaz de usuario
 
 Git y GitHub para el control de versiones
 
-## Flujo de la Aplicación
+## Flujo principal de la Aplicación
 
 ### 1. Vista (JSP: imc.jsp)
 
